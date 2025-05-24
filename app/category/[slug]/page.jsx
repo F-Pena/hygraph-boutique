@@ -10,13 +10,13 @@ export default async function Page({params}) {
     const category = await getCategoryBySlug(params.slug)
     return (<>
         <Head>
-          <title>{category.categoryName}</title>
+          <title>{category?.categoryName}</title>
         </Head>
         <Hero
-            title={category.categoryName}
+            title={category?.categoryName}
             description={category?.description?.raw}
         />
 
-        {category.products && <ProductGrid  products={category.products} />}
+        {category?.products && <ProductGrid  products={category?.products} />}
     </>)
 }
