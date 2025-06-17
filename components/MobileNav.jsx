@@ -8,7 +8,7 @@ export default function MobileNav(props) {
       <div className="lg:hidden">
         <button
           onClick={() => setOpen(!open)}
-          className="navbar-burger flex items-center text-indigo-500 p-3"
+          className="navbar-burger flex items-center text-gray-300 p-3"
         >
           <svg
             className="block h-4 w-4 fill-current"
@@ -43,12 +43,11 @@ export default function MobileNav(props) {
             </svg>
           </button>
           <ul className="mt-10">
-            <li className="my-5"><a href="/">Home</a></li>
             {props.nav.navLink.map((link) => (
               <li key={link.id} className="my-5">
                 <a
                   href={link.url ? link.url : "/en/" + link.page.url}
-                  className="text-base font-medium text-gray-500 hover:text-gray-900"
+                  className="text-base font-medium text-gray-300 hover:text-gray-100"
                 >
                   {link.displayText}
                 </a>

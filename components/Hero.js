@@ -1,42 +1,65 @@
 // Desc: Hero component that corresponds to CTA Hygraph component
-import Main from "./Main"
 // RichText is a component that renders Hygraph RichText JSON
+'use client'
 import { RichText } from "@graphcms/rich-text-react-renderer"
-
-export default function Hero({ button, title, description, image}) {
-
-  return (  
-    <Main>
-    <div className="grid grid-cols-4 gap-4 px-4 mx-auto mt-10 max-w-7xl sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-    <div className="col-span-3 sm:text-center lg:text-left">
-      <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-        <span className="block xl:inline">{title}</span>
-      </h1>
-      <div className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
-        <RichText content={description} />
-      </div>
-      {button?.url ? <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-        <div className="rounded-md shadow">
-           <a
-            href={button.url}
-            className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
-          >
-            {button.text}
-          </a>
+import { useId } from "react";
+import { ArrowDownIcon } from "@heroicons/react/24/solid";
+export default function Hero({ label, button, title, description, image}) {
+  const hasImage = image != null && image != "";
+  const heroId = useId();
+  return (
+    <div id={heroId} className="relative min-h-[70vh] w-full mx-auto px-4 pt-16 pb-24">
+        {/* Left: Image */}
+        {hasImage && (
+          <div className="absolute inset-0 top-0">
+            <img className="object-cover w-full h-full opacity-30" src={image} alt="" />
+          </div>
+        )}
+        {/* Center: Text */}
+        <div className="container mx-auto px-6 relative z-20">
+          <div className={`flex flex-col ${hasImage ? 'items-center' : 'items-start'} z-20 bg-transparent px-12 py-8 max-w-3xl mx-auto text-center ${hasImage ? 'text-left' : 'text-center'}`}>
+            {label && (
+              <span className="text-sm uppercase text-gray-400 tracking-wider mb-2">
+                {label}
+              </span>
+            )}
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+              {title}
+            </h1>
+            {description && <RichText content={description} />}
+            {button?.url && (
+              <a
+                href={button.url}
+                className="inline-block px-8 py-2 bg-black text-white font-medium shadow hover:bg-gray-200 hover:text-black transition-colors duration-300 text-lg mt-2"
+              >
+                {button.text}
+              </a>
+            )}
+          </div>
         </div>
-       
+        
+        {/* Background overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#181C23] to-[#232733] -z-10" />
 
-      </div> : ''}
-
-    </div>
-    {image && <div className="mt-10 sm:mt-0">
-      <img className="height-auto lg:mt-0 " src={image} alt="" />
-    </div>}
-  </div></Main>)
+        <button type="button" className="absolute bottom-0 left-1/2 -translate-x-1/2 animate-bounce" onClick={() => {
+          const hero = document.getElementById(heroId);
+          console.log('hero arrow clicked');
+          if (hero) {
+            const heroHeight = hero.getBoundingClientRect().height;
+            window.scrollTo({
+              top: heroHeight,
+              behavior: 'smooth'
+            }); 
+          }
+        }}>
+          <ArrowDownIcon className="w-10 h-10 text-red-500 mb-4" />
+        </button>
+      </div>
+  );
 }
    
    
-export function FullHero(props) {
+export function FullHero({label, title, description, button, image}) {
   // Full width stripe with a large image to the right and title and description and buttons on the left
   return (<>
     <div className="px-4 mx-auto sm:px-6 lg:px-8">

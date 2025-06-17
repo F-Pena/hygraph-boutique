@@ -14,7 +14,8 @@ export default async function Page({params}) {
         </Head>
         <Hero
             title={category?.categoryName}
-            description={category?.description?.raw}
+            description={category?.description?.raw} 
+            image={category?.image?.url}
         />
 
         {category?.products && <ProductGrid  products={category?.products} />}

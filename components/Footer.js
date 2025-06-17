@@ -1,143 +1,156 @@
 // Desc: Footer component for the website
 
-import navigation from '../utils/getNavigation'
+import navigation from "../utils/getNavigation";
 export default function Footer() {
-return (
-    <footer className="mt-20 text-center text-gray-600 bg-gray-100 lg:text-left">
-  <div className="flex items-center justify-center p-6 border-b border-gray-300 lg:justify-between">
-    
-    <div className="flex justify-center">
-      <a href="#!" className="mr-6 text-gray-600">
-        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
-          className="w-2.5" role="img" xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 320 512">
-          <path fill="currentColor"
-            d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
-          </path>
-        </svg>
-      </a>
-      <a href="#!" className="mr-6 text-gray-600">
-        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
-          className="w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <path fill="currentColor"
-            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
-          </path>
-        </svg>
-      </a>
-      <a href="#!" className="mr-6 text-gray-600">
-        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram"
-          className="w-3.5" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-          <path fill="currentColor"
-            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
-          </path>
-        </svg>
-      </a>
-      <a href="#!" className="mr-6 text-gray-600">
-        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in"
-          className="w-3.5" role="img" xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 448 512">
-          <path fill="currentColor"
-            d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
-          </path>
-        </svg>
-      </a>
-    </div>
-  </div>
-  <div className="py-10 mx-6 text-center md:text-left">
-    <div className="grid gap-8 grid-1 md:grid-cols-2 lg:grid-cols-4">
-      <div className="">
-        <a href="/">
-            <span className="sr-only">Hygraph Bikes</span>
-            <img
-                className="w-auto h-8 sm:h-10"
-                src="/logo.svg"
-                alt=""
-            />
-            </a>
-        <p className="mt-5" >
-          Your one-stop bike shop
-        </p>
+  return (
+    <footer className="py-16 bg-gray-900">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <div className="mb-4">
+              <a href="/">
+                  <span className="sr-only">Hygraph Commerce</span>
+                  <svg width="49" height="40" viewBox="0 0 49 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24.9727 0L29.687 3.92858L25.6129 7.32367C25.2421 7.63271 24.7034 7.63271 24.3325 7.32367L20.2585 3.92858L24.9727 0Z" fill="#fff"></path>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M24.3325 11.3545C24.7034 11.6635 25.2421 11.6635 25.6129 11.3545L32.1054 5.94397L35.8399 9.05606L27.5335 15.9782C26.0501 17.2143 23.8954 17.2143 22.412 15.9782L14.1055 9.05606L17.84 5.94397L24.3325 11.3545Z" fill="#fff"></path>
+                    <path d="M24.9727 40L20.2585 36.0714L24.3325 32.6763C24.7034 32.3673 25.2421 32.3673 25.6129 32.6763L29.687 36.0714L24.9727 40Z" fill="#fff"></path>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M25.6129 28.6455C25.2421 28.3365 24.7034 28.3365 24.3325 28.6455L17.84 34.056L14.1055 30.9439L22.412 24.0218C23.8954 22.7857 26.0501 22.7857 27.5335 24.0218L35.8399 30.9439L32.1054 34.056L25.6129 28.6455Z" fill="#fff"></path>
+                    <path d="M48.9727 20L44.2584 16.0714L40.466 19.2318C39.9862 19.6316 39.9862 20.3684 40.466 20.7682L44.2584 23.9286L48.9727 20Z" fill="#fff"></path>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M35.6291 20.7682C35.1493 20.3684 35.1493 19.6316 35.6291 19.2318L41.8399 14.056L38.1054 10.9439L30.9257 16.9271C29.0067 18.5263 29.0067 21.4737 30.9257 23.0729L38.1054 29.0561L41.8399 25.944L35.6291 20.7682Z" fill="#fff"></path>
+                    <path d="M0.972656 20.0001L5.68692 23.9287L9.47933 20.7683C9.95909 20.3685 9.95909 19.6317 9.47933 19.2319L5.68692 16.0715L0.972656 20.0001Z" fill="#fff"></path>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M14.3162 19.2319C14.796 19.6317 14.796 20.3685 14.3163 20.7683L8.10538 25.9441L11.8399 29.0562L19.0196 23.073C20.9386 21.4738 20.9386 18.5264 19.0196 16.9272L11.8399 10.944L8.10538 14.0561L14.3162 19.2319Z" fill="#fff"></path>
+                  </svg>
+                </a>
+            </div>
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              Cras fermentum odio eu feugiat lide par naso tierra. Justo eget
+              nada terra videa magna derita valies darta donna mare fermentum
+              iaculis eu non diam phasellus.
+            </p>
+            <p className="text-gray-400 text-sm">Find us here:</p>
+            <div className="flex space-x-3 mt-2">
+              <a className="text-gray-400 hover:text-white" href="#">
+                <svg
+                  aria-hidden="true"
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    clipRule="evenodd"
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                    fillRule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+              <a className="text-gray-400 hover:text-white" href="#">
+                <svg
+                  aria-hidden="true"
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                </svg>
+              </a>
+              <a className="text-gray-400 hover:text-white" href="#">
+                <svg
+                  aria-hidden="true"
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-4">About</h4>
+            <ul className="space-y-2">
+              <li>
+                <a className="text-gray-400 hover:text-white text-sm" href="#">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a className="text-gray-400 hover:text-white text-sm" href="#">
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a className="text-gray-400 hover:text-white text-sm" href="#">
+                  Press &amp; News
+                </a>
+              </li>
+              <li>
+                <a className="text-gray-400 hover:text-white text-sm" href="#">
+                  Shop
+                </a>
+              </li>
+              <li>
+                <a className="text-gray-400 hover:text-white text-sm" href="#">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-4">Useful Links</h4>
+            <ul className="space-y-2">
+              <li>
+                <a className="text-gray-400 hover:text-white text-sm" href="#">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a className="text-gray-400 hover:text-white text-sm" href="#">
+                  Terms of Service
+                </a>
+              </li>
+              <li>
+                <a className="text-gray-400 hover:text-white text-sm" href="#">
+                  FAQs
+                </a>
+              </li>
+              <li>
+                <a className="text-gray-400 hover:text-white text-sm" href="#">
+                  Support
+                </a>
+              </li>
+              <li>
+                <a className="text-gray-400 hover:text-white text-sm" href="#">
+                  Shipping Details
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-4">Subscribe</h4>
+            <p className="text-gray-400 text-sm mb-3">
+              Subscribe to get the latest news about deals, offers and more.
+            </p>
+            <form className="flex">
+              <input
+                className="flex-grow p-3 rounded-l-md bg-gray-700 text-gray-300 focus:ring-red-500 focus:border-red-500 border-transparent placeholder-gray-500 text-sm"
+                placeholder="Enter your email"
+                type="email"
+              />
+              <button
+                className="btn btn-primary rounded-r-md px-3 bg-red-500 hover:bg-red-600 text-sm"
+                type="submit"
+              >
+                <span className="material-icons text-lg">send</span>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div className="border-t border-gray-700 pt-8 text-center">
+          <p className="text-gray-500 text-sm">
+            © All right reserved. Hygraph POC Fashion 2025
+          </p>
+        </div>
       </div>
-      <div className="">
-        <h6 className="flex justify-center mb-4 font-semibold uppercase md:justify-start">
-          Products
-        </h6>
-        <ul >
-        {/* {navigation.map((category) => (
-            <li key={category.slug} className="mb-4"><a href={`/category/${category.slug}`} className="text-base font-medium text-gray-500 hover:text-gray-900">
-            {category.name}
-            </a></li>
-        ))} */}
-        </ul>
-      </div>
-      <div className="">
-        <h6 className="flex justify-center mb-4 font-semibold uppercase md:justify-start">
-          Useful links
-        </h6>
-        <p className="mb-4">
-          <a href="#!" className="text-gray-600">Pricing</a>
-        </p>
-        <p className="mb-4">
-          <a href="#!" className="text-gray-600">Settings</a>
-        </p>
-        <p className="mb-4">
-          <a href="#!" className="text-gray-600">Orders</a>
-        </p>
-        <p>
-          <a href="#!" className="text-gray-600">Help</a>
-        </p>
-      </div>
-      <div className="">
-        <h6 className="flex justify-center mb-4 font-semibold uppercase md:justify-start">
-          Contact
-        </h6>
-        <p className="flex items-center justify-center mb-4 md:justify-start">
-          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home"
-            className="w-4 mr-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-            <path fill="currentColor"
-              d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z">
-            </path>
-          </svg>
-          Dircksenstraße, Berlin, Germany
-        </p>
-        <p className="flex items-center justify-center mb-4 md:justify-start">
-          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope"
-            className="w-4 mr-4" role="img" xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512">
-            <path fill="currentColor"
-              d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z">
-            </path>
-          </svg>
-          info@hygraph.com
-        </p>
-        <p className="flex items-center justify-center mb-4 md:justify-start">
-          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone"
-            className="w-4 mr-4" role="img" xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512">
-            <path fill="currentColor"
-              d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z">
-            </path>
-          </svg>
-          + 01 234 567 88
-        </p>
-        <p className="flex items-center justify-center md:justify-start">
-          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="print"
-            className="w-4 mr-4" role="img" xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512">
-            <path fill="currentColor"
-              d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z">
-            </path>
-          </svg>
-          + 01 234 567 89
-        </p>
-      </div>
-    </div>
-  </div>
-  <div className="p-6 text-center bg-gray-200">
-    <span>© 2022 Copyright Hygraph Bikes</span>
-    
-  </div>
-</footer>
-)
-
+    </footer>
+  );
 }

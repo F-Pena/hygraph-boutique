@@ -1,8 +1,9 @@
 import {
-  ShoppingCartIcon
-} from '@heroicons/react/24/outline'
+  MagnifyingGlassIcon,
+  ShoppingBagIcon
+} from '@heroicons/react/24/solid'
 import  { getNavigationById } from '../utils/getNavigation'
-import Main from './Main'
+
 import MobileNav from './MobileNav'
 
 export default async function Navbar() {
@@ -10,42 +11,46 @@ export default async function Navbar() {
 
 
   return (
-    <Main>
-        <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-          <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="/">
-              <span className="sr-only">Hygraph Commerce</span>
-              <img
-                className="h-8 w-auto sm:h-10"
-                src="/logo.svg"
-                alt=""
-              />
-            </a>
-          </div>
-          <div className="-my-2 -mr-2 md:hidden">
-            {/* <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-              <span className="sr-only">Open menu</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-            </Popover.Button> */}
-          </div>
-           
-  
-          <div className="hidden items-center gap-5 justify-end md:flex md:flex-1 lg:w-0">
-          {nav.navLink.map((link) => (
-              <a key={link.id} href={link.url ? link.url : '/en/' + link.page.url} className="text-base font-medium text-gray-500 hover:text-gray-900">
-                {link.displayText}
+    <header className="sticky top-0 z-50 bg-gray-900 bg-opacity-80 backdrop-blur-md">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex items-center justify-between">
+            <div className='md:hidden'>
+              <MobileNav nav={nav} />
+            </div>
+            <div>
+              <a href="/">
+                <span className="sr-only">Hygraph Commerce</span>
+                <svg width="49" height="40" viewBox="0 0 49 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24.9727 0L29.687 3.92858L25.6129 7.32367C25.2421 7.63271 24.7034 7.63271 24.3325 7.32367L20.2585 3.92858L24.9727 0Z" fill="#fff"></path>
+                  <path fillRule="evenodd" clipRule="evenodd" d="M24.3325 11.3545C24.7034 11.6635 25.2421 11.6635 25.6129 11.3545L32.1054 5.94397L35.8399 9.05606L27.5335 15.9782C26.0501 17.2143 23.8954 17.2143 22.412 15.9782L14.1055 9.05606L17.84 5.94397L24.3325 11.3545Z" fill="#fff"></path>
+                  <path d="M24.9727 40L20.2585 36.0714L24.3325 32.6763C24.7034 32.3673 25.2421 32.3673 25.6129 32.6763L29.687 36.0714L24.9727 40Z" fill="#fff"></path>
+                  <path fillRule="evenodd" clipRule="evenodd" d="M25.6129 28.6455C25.2421 28.3365 24.7034 28.3365 24.3325 28.6455L17.84 34.056L14.1055 30.9439L22.412 24.0218C23.8954 22.7857 26.0501 22.7857 27.5335 24.0218L35.8399 30.9439L32.1054 34.056L25.6129 28.6455Z" fill="#fff"></path>
+                  <path d="M48.9727 20L44.2584 16.0714L40.466 19.2318C39.9862 19.6316 39.9862 20.3684 40.466 20.7682L44.2584 23.9286L48.9727 20Z" fill="#fff"></path>
+                  <path fillRule="evenodd" clipRule="evenodd" d="M35.6291 20.7682C35.1493 20.3684 35.1493 19.6316 35.6291 19.2318L41.8399 14.056L38.1054 10.9439L30.9257 16.9271C29.0067 18.5263 29.0067 21.4737 30.9257 23.0729L38.1054 29.0561L41.8399 25.944L35.6291 20.7682Z" fill="#fff"></path>
+                  <path d="M0.972656 20.0001L5.68692 23.9287L9.47933 20.7683C9.95909 20.3685 9.95909 19.6317 9.47933 19.2319L5.68692 16.0715L0.972656 20.0001Z" fill="#fff"></path>
+                  <path fillRule="evenodd" clipRule="evenodd" d="M14.3162 19.2319C14.796 19.6317 14.796 20.3685 14.3163 20.7683L8.10538 25.9441L11.8399 29.0562L19.0196 23.073C20.9386 21.4738 20.9386 18.5264 19.0196 16.9272L11.8399 10.944L8.10538 14.0561L14.3162 19.2319Z" fill="#fff"></path>
+                </svg>
               </a>
-            ))}
-            <a href="/cart" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
-            {<ShoppingCartIcon />} Cart
-            </a>
-            
-          </div>
-          <div className='md:hidden'>
-            <MobileNav nav={nav} />
+            </div>
+            <div className="hidden items-center gap-5 md:flex">
+              {nav.navLink.map((link) => (
+                <a key={link.id} href={link.url ? link.url : '/en/' + link.page.url} className="text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-md text-lg font-medium">
+                  {link.displayText}
+                </a>
+              ))}
+            </div>
+            <div className="flex items-center gap-5">
+              <button type="button">
+                <span className="sr-only">Open Search</span>
+                <MagnifyingGlassIcon className="w-6 h-6 text-gray-300 hover:text-white transition-colors" />
+              </button>
+              <a href="/cart" className="whitespace-nowrap text-base font-medium text-gray-300 hover:text-gray-100">
+                {<ShoppingBagIcon className="w-6 h-6" />}
+                <span className="sr-only">Cart</span>
+              </a>
+            </div>
           </div>
         </div>
-
-    </Main>
+    </header>
   )
 }

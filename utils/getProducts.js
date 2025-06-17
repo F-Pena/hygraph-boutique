@@ -19,14 +19,6 @@ export async function getSomeProducts(count = 4) {
           width
           altText
         }
-        reviews {
-          data {
-            id
-            name
-            rating
-            comment
-          }
-        }
       }
     }
   `;
@@ -70,14 +62,6 @@ export async function getProductBySlug(slug, preview = false) {
         productDescription {
           html
         }
-        reviews {
-          data {
-            id
-            name
-            rating
-            comment
-          }
-        }
         productCategory {
           id
           slug
@@ -101,7 +85,6 @@ export async function getProductBySlug(slug, preview = false) {
       slug,
       stage: preview ? "DRAFT" : "PUBLISHED",
     });
-    product.averageRating = averageRating(product.reviews);
 
     return product;
   } catch (error) {

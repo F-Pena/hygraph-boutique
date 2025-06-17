@@ -12,7 +12,10 @@ module.exports = {
     extend: {
       colors: {
         'indigo-600': 'rgb(102,99,253)'
-
+      },
+      fontFamily: {
+        'sans': ['DM Sans', 'sans-serif'],
+        'heading': ['Afacad Flux', 'sans-serif'],
       }
     },
   },
