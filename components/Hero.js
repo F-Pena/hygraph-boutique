@@ -11,12 +11,12 @@ export default function Hero({ label, button, title, description, image}) {
     <div id={heroId} className="relative min-h-[70vh] w-full mx-auto px-4 pt-16 pb-24">
         {/* Left: Image */}
         {hasImage && (
-          <div className="absolute inset-0 top-0">
-            <img className="object-cover w-full h-full opacity-30" src={image} alt="" />
+          <div className="absolute inset-0 top-0 bg-no-repeat bg-cover bg-fixed parallax-bg bg-center opacity-30" style={{backgroundImage: `url(${image})`}} aria-hidden="true">
+            
           </div>
         )}
         {/* Center: Text */}
-        <div className="container mx-auto px-6 relative z-20">
+        <div className="container mx-auto px-6 relative z-20 sticky top-24">
           <div className={`flex flex-col ${hasImage ? 'items-center' : 'items-start'} z-20 bg-transparent px-12 py-8 max-w-3xl mx-auto text-center ${hasImage ? 'text-left' : 'text-center'}`}>
             {label && (
               <span className="text-sm uppercase text-gray-400 tracking-wider mb-2">
